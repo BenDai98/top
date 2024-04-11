@@ -11,7 +11,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 let marker = L.marker([67.8802837, 12.970926]).addTo(map);
-marker.bindPopup("<strong>Hello world!</strong><br>I am a popup.").openPopup();
+marker.bindPopup(`
+    <h2>Lofoten!</h2><br>
+    <ul>
+        <li>Breite: ${lat.toFixed(5)}</li>
+        <li>Laenge: ${long.toFixed(5)}</li>
+    </ul>
+`).openPopup();
 
 let circle = L.circle([67.9, 13], {
     color: 'red',
